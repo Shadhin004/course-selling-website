@@ -1,0 +1,74 @@
+@media only screen and (max-width: 767px) {
+  .header-sign-in-up {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.header-sign-in-up ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-sign-in-up ul li {
+  margin-right: 30px;
+}
+
+.header-sign-in-up ul li:last-child {
+  margin-right: 0;
+}
+
+.header-sign-in-up ul li a {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #212832;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  display: block;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-sign-in-up ul li a {
+    font-size: 16px;
+  }
+}
+
+.header-sign-in-up ul li a:hover {
+  color: #309255;
+}
+
+.header-sign-in-up ul li a.sign-up {
+  height: 60px;
+  line-height: 56px;
+  padding: 0 35px;
+  border: 1px solid #309255;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header-sign-in-up ul li a.sign-up {
+    height: 50px;
+    line-height: 46px;
+    padding: 0 25px;
+  }
+}
+
+.header-sign-in-up ul li a.sign-up:hover {
+  background-color: #309255;
+  color: #fff;
+}

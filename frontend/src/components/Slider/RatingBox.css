@@ -1,0 +1,133 @@
+.ratingbox {
+  position: absolute;
+  top: 24%;
+  right: 115px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px),
+  only screen and (min-width: 992px) and (max-width: 1199px) {
+  .ratingbox {
+    right: 15px;
+    top: 20%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  only screen and (max-width: 767px) {
+  .ratingbox {
+    top: 18%;
+    right: 15px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox {
+    right: 15px;
+  }
+}
+
+.ratingbox .boxrating {
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 767px) {
+  .ratingbox .boxrating {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox .boxrating {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.ratingbox .boxrating .count {
+  font-size: 30px;
+  font-weight: 500;
+  color: #309255;
+}
+
+@media only screen and (max-width: 767px) {
+  .ratingbox .boxrating .count {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox .boxrating .count {
+    font-size: 18px;
+  }
+}
+
+.ratingbox .boxrating .count i {
+  color: #ffa200;
+  font-size: 14px;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox .boxrating .count i {
+    font-size: 12px;
+  }
+}
+
+.ratingbox .boxrating p {
+  color: #52565b;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 767px) {
+  .ratingbox .boxrating p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox .boxrating p {
+    font-size: 10px;
+  }
+}
+
+.ratingbox .shape {
+  margin-top: 45px;
+  padding-right: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+  .ratingbox .shape {
+    width: 120px;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .ratingbox .shape {
+    display: none;
+  }
+}
+
+.animationup {
+  -webkit-animation: up 5s linear 0s infinite normal forwards;
+  animation: up 5s linear 0s infinite normal forwards;
+}

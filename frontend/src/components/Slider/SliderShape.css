@@ -1,0 +1,19 @@
+.slider-section .slider-shape {
+  position: absolute;
+  left: 120px;
+  top: 195px;
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px),
+  only screen and (min-width: 992px) and (max-width: 1199px) {
+  .slider-section .slider-shape {
+    left: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  only screen and (max-width: 767px) {
+  .slider-section .slider-shape {
+    display: none;
+  }
+}

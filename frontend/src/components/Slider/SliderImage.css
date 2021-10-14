@@ -1,0 +1,30 @@
+.sliderimages {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 56%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .sliderimages {
+    width: 55%;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px),
+  only screen and (max-width: 767px) {
+  .sliderimages {
+    position: relative;
+    width: 55%;
+    margin-left: auto;
+  }
+}

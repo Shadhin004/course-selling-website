@@ -1,0 +1,38 @@
+.header-main-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid rgba(48, 146, 85, 0.25);
+  padding: 16px 15px;
+  border-radius: 15px;
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: 30px;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+@media only screen and (max-width: 575px) {
+  .header-main-wrapper {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .header-main-wrapper {
+    padding: 16px 25px;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+}
