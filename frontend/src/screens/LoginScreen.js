@@ -1,10 +1,36 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Container } from 'react-bootstrap'
-import PageBannerSection from '../components/PageBanner/PageBannerSection'
+import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../actions/userActions'
+
 import PageBannerIcon from '../components/PageBanner/PageBannerIcon'
+import Message from '../components/Message'
 import { Link } from 'react-router-dom'
 
-function LoginScreen() {
+function LoginScreen({location, history}) {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const dispatch = useDispatch()
+
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+
+    const userLogin = useSelector(state => state.userLogin)
+    const {error, loading, userInfo} = userLogin
+
+    useEffect(() => {
+        if (userInfo) {
+            history.push(redirect)
+                     
+        }
+    }, [history, userInfo, redirect]) 
+
+    const submitHandler = (e) =>{
+        e.preventDefault()
+        dispatch(login(email, password))
+    }
+
     return (
         <div>
             
@@ -30,6 +56,7 @@ function LoginScreen() {
 
             <div>
                 <Container>
+                {error && <center class="mt-5">Username or Password did not match...</center>}
                 <div class="register-login-wrapper">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
@@ -55,19 +82,20 @@ function LoginScreen() {
                                 <h3 class="title">Login <span>Now</span></h3>
 
                                 <div class="form-wrapper">
-                                    <form action="#">
+                                    <form action="#" onSubmit={submitHandler}>
                                         
-                                        <div class="single-form">
-                                            <input type="email" placeholder="Username or Email" />
+                                        <div class="single-form" controlId='email'>
+                                            <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                        </div>
+                                        
+                                        <div class="single-form" controlId='password'>
+                                            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
                                         </div>
                                         
                                         <div class="single-form">
-                                            <input type="password" placeholder="Password" />
-                                        </div>
-                                        
-                                        <div class="single-form">
-                                            <button class="btn btn-primary btn-hover-dark w-100">Login</button>
-                                            <Link class="btn btn-secondary btn-outline w-100" to="#">Login with Google</Link>
+                                            <button class="btn btn-primary btn-hover-dark w-100" type='submit' >Login</button>
+                                            <p class="mt-5"> Don't Have an Account? </p>
+                                            <Link class="btn btn-secondary btn-outline w-100" to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Here</Link>
                                         </div>
                                         
                                     </form>

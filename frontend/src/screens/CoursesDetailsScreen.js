@@ -24,7 +24,7 @@ function CoursesDetailsScreen({ match, history }) {
 
 
     const addToCartHandler = () =>{
-       history.push(`/cart/${match.params.id}`)
+       history.push(`/cart/${match.params.id}?qty=1`)
     }
 
 
@@ -406,7 +406,7 @@ function CoursesDetailsScreen({ match, history }) {
                                     </ul>
                                 </div>
                                 <div class="info-btn">
-                                    <a href="#" class="btn btn-primary btn-hover-dark" onClick={addToCartHandler}>Enroll Now</a>
+                                    <a  class="btn btn-primary btn-hover-dark" onClick={addToCartHandler}>Enroll Now</a>
                                 </div>
                             </div>
                         

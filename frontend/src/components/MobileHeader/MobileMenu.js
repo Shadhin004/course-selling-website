@@ -6,7 +6,7 @@ import MobileTopMedal from './MobileTopMedal'
 function MobileMenu() {
     return (
         <div class="mobile-menu">
-            <a class="menu-close" href="javascript:void(0)">
+            <a class="menu-close" href="#">
                 <i class="icofont-close-line"></i>
             </a>
 

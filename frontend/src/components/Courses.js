@@ -34,8 +34,8 @@ function CourseCard({ courses }) {
                     </div>
                     <div class="courses-price-review">
                         <div class="courses-price">
-                            <span class="sale-parice">${courses.price}</span>
-                            <span class="old-parice">${courses.salePrice}</span>
+                            <span class="sale-parice">${courses.salePrice}</span>
+                            <span class="old-parice">${courses.price}</span>
                         </div>
                         <div class="courses-review">
                             <span class="rating-count">{courses.rating}</span>

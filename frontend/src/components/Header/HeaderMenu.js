@@ -9,21 +9,12 @@ function HeaderMenu() {
                 <li><Link to="/">Home</Link></li>
                 
                 <li>
-                    <a href="#">Pages </a>
+                    <a href="#">Category </a>
                     <ul class="sub-menu">
-                        <li><Link to="about.html">About</Link></li>
-                        <li><Link to="/register">Register</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                        <li><Link to="faq.html">FAQ</Link></li>
-                        <li><Link to="404-error.html">404 Error</Link></li>
-                        <li><Link to="after-enroll.html">After Enroll</Link></li>
-                        <li><Link to="courses-admin.html">Instructor Dashboard (Course List)</Link></li>
-                        <li><Link to="overview.html">Instructor Dashboard (Performance)</Link></li>
-                        <li><Link to="students.html">Students</Link></li>
-                        <li><Link to="reviews.html">Reviews</Link></li>
-                        <li><Link to="engagement.html">Course engagement</Link></li>
-                        <li><Link to="traffic-conversion.html">Traffic & conversion</Link></li>
-                        <li><Link to="messages.html">Messages</Link></li>
+                        <li><Link to="about.html">Science</Link></li>
+                        <li><Link to="/register">Arts</Link></li>
+                        <li><Link to="/login">Web </Link></li>
+                        <li><Link to="faq.html">Software</Link></li>                                                
                     </ul>
                 </li>
                 <li>
@@ -34,8 +25,7 @@ function HeaderMenu() {
                     </ul>
                 </li>
                 <li>
-                    <Link to="/cart">Cart</Link>
-                    
+                    <Link to="/about-us">About Us</Link>                    
                 </li>
                 <li><Link to="/contact">Contact</Link></li>
             </ul>
