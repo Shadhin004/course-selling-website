@@ -51,9 +51,8 @@ function HomeScreen() {
                                 <Courses courses={courses} />
                                 
                             </Col>
-                        ))}
-                    
-                </Row>    
+                        ))}                    
+                    </Row>    
                 }
             <CourseButton />
             </Container>

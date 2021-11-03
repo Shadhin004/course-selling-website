@@ -4,6 +4,7 @@ import './HeaderSignIn.css'
 import './HeaderMenu.css'
 import { Link } from 'react-router-dom'
 import { logout } from '../../actions/userActions'
+import { logoutCart } from '../../actions/cartActions'
 
 function HeaderSignIn() {
 
@@ -14,6 +15,8 @@ function HeaderSignIn() {
     const logoutHandler = () =>{
         dispatch(logout())
     }
+   
+
     return (
         <div class="header-menu d-none d-lg-block">
             <ul class="nav-menu">
@@ -24,7 +27,7 @@ function HeaderSignIn() {
                         <a to="#" id="username"> <i class="fas fa-user"></i> {userInfo.name}</a>
                         <ul class="sub-menu">
                             <li><Link to="/profile">Profile</Link></li>
-                            <li><a href="#" onClick={logoutHandler}>Logout</a></li>
+                            <li><a href="#" onClick={logoutHandler}>Logout</a></li>         
                                                                         
                         </ul>
                     </li>

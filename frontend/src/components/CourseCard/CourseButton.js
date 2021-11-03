@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CourseButton() {
     return (
         <div class="courses-btn text-center">
-            <a href="courses.html" class="btn btn-secondary btn-hover-primary">All Courses</a>
+            <Link to="/courses" class="btn btn-secondary btn-hover-primary">All Courses</Link>
         </div>
     )
 }

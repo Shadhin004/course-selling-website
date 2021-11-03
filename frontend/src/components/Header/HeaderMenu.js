@@ -18,9 +18,9 @@ function HeaderMenu() {
                     </ul>
                 </li>
                 <li>
-                    <a href="#">All Course</a>
+                    <Link to="/courses">All Course</Link>
                     <ul class="sub-menu">
-                        <li><Link to="courses.html">Courses</Link></li>
+                        <li><Link to="/courses">Courses</Link></li>
                         <li><Link to="courses-details.html">Courses Details</Link></li>
                     </ul>
                 </li>

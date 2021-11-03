@@ -14,6 +14,7 @@ import LoginScreen from './screens/LoginScreen';
 import CoursesDetailsScreen from './screens/CoursesDetailsScreen';
 import AllCoursesScreen from './screens/AllCoursesScreen'
 import CartScreen from './screens/CartScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 
 
@@ -30,9 +31,10 @@ function App() {
         <Route path='/contact' component={ContactScreen} />
         <Route path='/register' component={RegisterScreen} />
         <Route path='/login' component={LoginScreen} />
-        <Route path='/courses' component={AllCoursesScreen}  />
+        <Route path='/courses' component={AllCoursesScreen} exact />
         <Route path='/courses/:id' component={CoursesDetailsScreen} exact />
         <Route path='/cart/:id?' component={CartScreen} />
+        <Route path='/profile/' component={ProfileScreen} />
         
       </main>
       <Footer />
