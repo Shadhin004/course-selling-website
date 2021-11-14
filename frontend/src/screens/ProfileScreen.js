@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { Container , Row, Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { getUserDetails } from '../actions/userActions'
+import { getUserDetails, updateUserProfile } from '../actions/userActions'
+
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -20,25 +22,36 @@ function ProfileScreen({ history }) {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
+    const userUpdateProfile = useSelector(state => state.userUpdateProfile)
+    const { success } = userUpdateProfile
+
     useEffect(() => {
         if (!userInfo) {
             history.push('/login')                     
         }else{
-            if(!user || !user.name){
+            if(!user || !user.name || success){
+                dispatch({
+                    type:USER_UPDATE_PROFILE_RESET
+                })
                 dispatch(getUserDetails('profile'))
             }else {
                 setName(user.name)
                 setEmail(user.email)
             }
         }
-    }, [dispatch, history, userInfo, user]) 
+    }, [dispatch, history, userInfo, user, success]) 
 
     const submitHandler = (e) =>{
         e.preventDefault()
         if (password !== confirmPassword){
             setMessage('Passwords do not Match!')
         } else{
-            console.log('=Kaaj hocche')
+            dispatch(updateUserProfile({
+                'id':user._id,
+                'name':name,
+                'email':email,
+                'password':password,                
+            }))            
         }
         
     }
@@ -73,29 +86,29 @@ function ProfileScreen({ history }) {
                 <Row class="mt-5">
                     <Col md={3}>
                         <h2>User Profile</h2>
-                            
+                        {success && <center class="mt-5">Username or Password did not match...</center>}
                                     <form action="#" onSubmit={submitHandler}>
                                         
                                         <div class="single-form" controlID="name">
-                                            <input type="text" required placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
+                                            <p> Name: </p><input type="text" required placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
                                         </div>
                                         
                                         <div class="single-form" controlID="email">
-                                            <input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                        <p> Email: </p><input type="email" required placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         
                                         <div class="single-form" controlID="password">
-                                            <input type="password"  placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+                                        <p> Password: </p><input type="password"  placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                                         </div>
                                         
                                         <div class="single-form" controlID="passwordConfirm">
-                                            <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                                        <p>Confirm Password: </p><input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
                                         </div>
 
                                         {message && <p class="mt-5" style={{color: 'red'}}>{message}</p>}
                                         
                                         <div class="single-form mb-5">
-                                            <button type="submit" class="btn btn-primary btn-hover-dark w-100" >Update</button>                                            
+                                            <button type="submit" class="btn btn-primary btn-hover-dark w-100">Update</button>                                            
                                         </div>
                                         
                                     </form>

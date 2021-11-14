@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function FooterWidget2() {
     return (
@@ -12,8 +13,8 @@ function FooterWidget2() {
                     <h4 class="footer-widget-title">Category</h4>
 
                     <ul class="widget-link">
-                        <li><a href="#">Creative Writing</a></li>
-                        <li><a href="#">Film & Video</a></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/Login">Login</Link></li>
                         <li><a href="#">Graphic Design</a></li>
                         <li><a href="#">UI/UX Design</a></li>
                         <li><a href="#">Business Analytics</a></li>
