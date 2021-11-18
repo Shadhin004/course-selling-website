@@ -4,6 +4,9 @@ import './style.css';
 import HeaderSection from './components/Header/HeaderSection';
 import Footer from './components/Footer/Footer';
 import BackToTop from './components/BackToTop';
+import MobileMenu from './components/MobileHeader/MobileMenu';
+import MenuOverlay from './components/Overlay/MenuOverlay';
+import Header from './components/Header';
 
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -25,8 +28,8 @@ function App() {
   return (
    <Router>
    <div class="main-wrapper">
-      <HeaderSection />
-      <main>
+      <Header />
+      <>
         
         <Route path='/' component={HomeScreen} exact />
         <Route path='/contact' component={ContactScreen} />
@@ -38,7 +41,7 @@ function App() {
         <Route path='/profile/' component={ProfileScreen} />
         <Route path='/shipping' component={ShippingScreen} />
         
-      </main>
+      </>
       <Footer />
       <BackToTop />
     </div>
